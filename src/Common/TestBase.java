@@ -34,12 +34,14 @@ public class TestBase {
 	}
 	
 	public void inputYear(String year) {
+		// Tìm phần tử chưa dropdownbox
 		WebElement dropBox = dr.findElement(By.xpath("//select[@class='react-datepicker__year-select']"));
 		Select years = new Select(dropBox);
 		years.selectByValue(year);
 	}
 	
 	public void inputMonth(String month) {
+		// Tìm phần tử chưa dropdownbox
 		WebElement dropBox = dr.findElement(By.xpath("//select[@class='react-datepicker__month-select']"));
 		Select M = new Select(dropBox);
 		M.selectByValue(month);
@@ -47,12 +49,14 @@ public class TestBase {
 	
 	public void inputDay(String day) {
 		// Tìm danh sách các ngày đang hiển thị
-		List<WebElement> visibleDay = dr.findElements(By.xpath(""));
+		List<WebElement> visibleDays = dr.findElements(By.xpath("//div[contains(@class,'react-datepicker__day') and @role='option'] "));
+//		System.out.println(visibleDays.size());
 		//Dùng foreach duyệt qua từng phần tử trong list
-		for (WebElement e : visibleDay) {
+		for (WebElement e : visibleDays ) {
 			//Lấy đầy đủ các ngày cần tìm
 			String valueOfClass = e.getAttribute("class");
-			if((valueOfClass.contains(day)) && (valueOfClass.contains("outside-month"))){
+//			System.out.println(valueOfClass);
+			if((valueOfClass.contains(day)) && !(valueOfClass.contains("outside-month"))){
 				e.click();
 			}
 		}

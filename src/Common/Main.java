@@ -1,6 +1,7 @@
 package Common;
 
 import Test.CheckBox;
+import Test.PracticeForm;
 import Test.TextBoxTest;
 import Test.WebTables;
 
@@ -16,9 +17,12 @@ public class Main {
 //		textBoxTest.TestTC1();
 //		CB.TestTC3();
 		
-		WebTables WB = new WebTables();
+//		WebTables WB = new WebTables();
 //		WB.TestTC1();
 //		WB.TestTC2();
-		WB.TestTC3();
+//		WB.TestTC3();
+		
+		PracticeForm  PF = new PracticeForm();
+		PF.TestTC1();
 	}
 }
