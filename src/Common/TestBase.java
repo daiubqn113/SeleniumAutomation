@@ -58,6 +58,7 @@ public class TestBase {
 //			System.out.println(valueOfClass);
 			if((valueOfClass.contains(day)) && !(valueOfClass.contains("outside-month"))){
 				e.click();
+				break;
 			}
 		}
 	}

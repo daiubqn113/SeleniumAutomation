@@ -21,8 +21,8 @@ public class PracticeForm {
 		String inputYear = "2022";
 		String inputMonth = "6";
 		String inputDays = "19";
-//		String inputSalary = "100000";
-//		String inputDepartment = "Kỹ thuật";
+		String inputSalary = "Maths";
+		String inputCurrentAddress= "UBQN";
 		
 		//Các bước thực hiện
 		((JavascriptExecutor) testB.dr) .executeScript("window.scrollTo(0, document.body.scrollHeight)" );
@@ -43,6 +43,18 @@ public class PracticeForm {
 		drpMonth.selectByValue(inputMonth);
 		
 		testB.inputDay(inputDays);
+		
+//		testB.dr.findElement(By.xpath("//*[@id=\"subjectsContainer\"]/div/div[1]")).sendKeys(inputSalary);
+//		Select drpSalary = new Select(testB.dr.findElement(By.className("subjects-auto-complete__control")));
+//		drpSalary.selectByValue(inputSalary);
+		
+		
+		
+//		testB.dr.findElement(By.xpath("//*[@id=\"subjectsContainer\"]/div/div[1]")).sendKeys(inputSalary);
+		testB.dr.findElement(By.xpath("//*[@id=\"hobbiesWrapper\"]/div[2]/div[3]")).click();
+		testB.dr.findElement(By.xpath("//*[@id=\"currentAddress\"]")).sendKeys(inputCurrentAddress);
+//		testB.dr.findElement(By.xpath("//*[@id=\"genterWrapper\"]/div[2]/div[1]")).click();
+//		testB.dr.findElement(By.xpath("//*[@id=\"genterWrapper\"]/div[2]/div[1]")).click();
 		
 //		testB.dr.findElement(By.xpath("//*[@id=\"dateOfBirth\"]/div[2]/div[2]/div/div/div[2]/div[2]/div[3]/div[4]")).click();
 //		Select drpDay = new Select(testB.dr.findElement(By.className("react-datepicker__year-select")));
